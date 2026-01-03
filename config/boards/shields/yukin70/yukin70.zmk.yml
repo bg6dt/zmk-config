@@ -1,0 +1,10 @@
+file_format: "1"
+id: yukin70
+name: yukin70
+type: shield
+url: https://github.com/bg6dt/zmk-config/
+features:
+  - keys
+siblings:
+  - yukin70_left
+  - yukin70_right

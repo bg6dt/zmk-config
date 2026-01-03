@@ -1,0 +1,10 @@
+file_format: "1"
+id: yukin52840_v1
+name: Yukin52840 v1
+type: board
+arch: arm
+outputs:
+  - usb
+  - ble
+url: https://github.com/bg6dt/zmk-config/
+
