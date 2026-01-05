@@ -6,6 +6,7 @@
 
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
+#include <common/nordic/nrf52840_uf2_boot_mode.dtsi>
 /*#include "arduino_pro_micro_pins.dtsi"
 #include "yukin52840_v1-pinctrl.dtsi"*/
 
@@ -17,7 +18,7 @@
         zephyr,code-partition = &code_partition;
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
-        zephyr,console = &cdc_acm_uart;
+        /*zephyr,console = &cdc_acm_uart;*/
         /*zmk,backlight = &backlight;*/
         zmk,battery = &vbatt;
     };
@@ -72,6 +73,10 @@
 };
 */
 
+&reg1 {
+    regulator-initial-mode = <NRF5X_REG_MODE_DCDC>;
+};
+
 &adc {
     status = "okay";
 };
@@ -114,14 +119,18 @@
     tx-pin = <6>;
     rx-pin = <8>;
 };
-*/
+
 &usbd {
     status = "okay";
     cdc_acm_uart: cdc_acm_uart {
         compatible = "zephyr,cdc-acm-uart";
     };
 };
+*/
 
+zephyr_udc0: &usbd {
+    status = "okay";
+};
 
 &flash0 {
     /*

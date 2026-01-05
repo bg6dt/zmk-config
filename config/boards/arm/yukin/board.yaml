@@ -1,0 +1,5 @@
+board:
+  name: yukin52840
+  vendor: yukin
+  socs:
+    - name: nrf52840
